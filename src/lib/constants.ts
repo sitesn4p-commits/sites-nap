@@ -73,6 +73,7 @@ export const PRODUCT_CATEGORIES = [
       "Gaming PSU",
       "Gaming SSD",
       "Gaming RAM",
+      "Gaming Cases",
       "Gaming Tables",
       "Gaming Chairs"
     ]
