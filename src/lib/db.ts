@@ -1,7 +1,7 @@
 import { MongoClient, ObjectId } from "mongodb";
 import dns from "dns";
 
-const uri = process.env.MONGODB_DIRECT_URI || process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI || process.env.MONGODB_DIRECT_URI;
 const dbName = process.env.MONGODB_DB || "buildpro";
 const dnsServers = process.env.MONGODB_DNS_SERVERS?.split(",").map((server) => server.trim()).filter(Boolean);
 const allowInvalidCertificates = process.env.MONGODB_TLS_ALLOW_INVALID_CERTIFICATES === "true";
@@ -42,6 +42,9 @@ export async function getMongoClient() {
 
   if (!cache.promise) {
     cache.promise = new MongoClient(uri, {
+      connectTimeoutMS: 5000,
+      serverSelectionTimeoutMS: 5000,
+      socketTimeoutMS: 10000,
       tlsAllowInvalidCertificates: allowInvalidCertificates
     }).connect();
   }
