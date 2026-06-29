@@ -45,6 +45,12 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <div className="container footer-credit">
+        Developed by{" "}
+        <a href="https://sites-nap.vercel.app/" target="_blank" rel="noreferrer">
+          SiteSnap
+        </a>
+      </div>
     </footer>
   );
 }

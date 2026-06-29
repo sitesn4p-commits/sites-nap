@@ -816,6 +816,19 @@ img {
   gap: 8px;
 }
 
+.footer-credit {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.9rem;
+}
+
+.footer-credit a {
+  color: #fff;
+  font-weight: 700;
+}
+
 .admin-shell {
   min-height: 100vh;
   display: grid;
